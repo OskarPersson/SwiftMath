@@ -547,6 +547,8 @@ public class MTMathAtomFactory {
         switch chStr {
             case "\u{0410}"..."\u{044F}":
                 return MTMathAtom(type: .ordinary, value: chStr)
+            case "å", "ä", "ö", "Å", "Ä", "Ö":
+                return MTMathAtom(type: .ordinary, value: chStr)
             case _ where ch.utf32Char < 0x0021 || ch.utf32Char > 0x007E:
                 return nil
             case "$", "%", "#", "&", "~", "\'", "^", "_", "{", "}", "\\":
